@@ -1,0 +1,31 @@
+.slot-grid{
+    position: relative;
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+}
+
+.slot-n,
+.slot-e,
+.slot-s,
+.slot-w{
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.slot-n{
+    flex-direction: column;
+    bottom: 100%;
+}
+.slot-w{
+    right: 100%;
+}
+.slot-e{
+    flex-direction: row-reverse;
+    left: 100%;
+}
+.slot-s{
+    top: 100%;
+    flex-direction: column-reverse;
+}

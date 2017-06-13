@@ -1,0 +1,27 @@
+.arrow{
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 4rem;
+    height: 4rem;
+}
+.slot-n > div > .arrow{
+    background-image: url('../img/arrow-n.png');
+    background-size: contain;
+}
+.slot-e > div > .arrow{
+    background-image: url('../img/arrow-e.png');
+    background-size: contain;
+}
+.slot-s > div > .arrow{
+    background-image: url('../img/arrow-s.png');
+    background-size: contain;
+}
+.slot-w > div > .arrow{
+    background-image: url('../img/arrow-w.png');
+    background-size: contain;
+}
+
+.slot-e > div  > .arrow ,
+.slot-w > div  > .arrow{
+    text-align: center;
+}

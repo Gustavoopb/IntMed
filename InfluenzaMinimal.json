@@ -1,0 +1,98 @@
+{
+  "eClass": "http://protocolos.intmed.com.br#//Root",
+  "protocolo": [
+    {
+      "codigo": "InfluenzaPneumonia",
+      "nome": "InfluenzaPneumonia",
+      "elemento": [
+        {
+          "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+          "nome": "Verifica Sepse",
+          "isInitial": true,
+          "sequenciaDeSaida": [
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S1"
+            }
+          ]
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+          "nome": "S1",
+          "passoDeOrigem": {
+            "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+            "$ref": "Verifica Sepse"
+          },
+          "juncaoDeChegada": {
+            "eClass": "http://protocolos.intmed.com.br#//JuncaoExcludente",
+            "$ref": "JE1_sepse"
+          }
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//JuncaoExcludente",
+          "nome": "JE1_sepse",
+          "sequenciaDeSaida": [
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S2"
+            },
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S3"
+            }
+          ],
+          "sequenciaDeOrigem": [
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S1"
+            }
+          ]
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+          "nome": "S2",
+          "passoDeChegada": {
+            "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+            "$ref": "Encaminhar ao Eixo Vermelho"
+          },
+          "juncaoDeOrigem": {
+            "eClass": "http://protocolos.intmed.com.br#//JuncaoExcludente",
+            "$ref": "JE1_sepse"
+          }
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+          "nome": "S3",
+          "passoDeChegada": {
+            "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+            "$ref": "Verificar Idade"
+          },
+          "juncaoDeOrigem": {
+            "eClass": "http://protocolos.intmed.com.br#//JuncaoExcludente",
+            "$ref": "JE1_sepse"
+          }
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+          "nome": "Encaminhar ao Eixo Vermelho",
+          "sequenciaDeEntrada": [
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S2"
+            }
+          ]
+        },
+        {
+          "eClass": "http://protocolos.intmed.com.br#//AuxilioConduta",
+          "nome": "Verificar Idade",
+          "sequenciaDeEntrada": [
+            {
+              "eClass": "http://protocolos.intmed.com.br#//Sequencia",
+              "$ref": "S3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

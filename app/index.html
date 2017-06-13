@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>IntMed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/arrow.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/slot.css">
+</head>
+
+<body class="container">
+    <nav>
+        <h1>IntMed</h1>
+    </nav>
+    <main>
+        <div id="root"></div>
+    </main>
+    <aside>
+        <div id="task" class="task" draggable="true" ondragstart="drag(event)"></div>
+        <div id="ex-gateway" class="ex-gateway" draggable="true" ondragstart="drag(event)"></div>
+        <button onclick="Board.showJSON()">Ver JSON</button>
+        <button onclick="Board.showElement()">Ver BPMN</button>
+    </aside>
+    <script type="text/javascript" src="./js/model/view.js"></script>
+    <script type="text/javascript" src="./js/model/arrow.js"></script>
+    <script type="text/javascript" src="./js/model/slot.js"></script>
+    <script type="text/javascript" src="./js/model/protocol.js"></script>
+    <script type="text/javascript" src="./js/model/board.js"></script>
+    <script type="text/javascript" src="./index.js"></script>
+</body>
+
+</html>

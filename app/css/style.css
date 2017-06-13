@@ -1,0 +1,89 @@
+html, body{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+nav{
+    position: absolute;
+    top: 0;
+    color: #2b7551;
+    width: 100vw;
+    height: 3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    font-size: 130%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "aside" "main";
+}
+
+main{
+    gird-area: main;
+    padding: 3em 0 0 3em;
+    width: 100vw;
+    min-height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+aside{
+    grid-area: aside;
+    width: 100vw;
+    height: 20hw;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.task{
+    width: 4rem;
+    height: 4rem;
+    border: 0.1em solid black;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+}
+
+#ex-gateway{
+    margin: 2rem 0;
+}
+
+.ex-gateway{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url('../img/ex-gateway.png');
+    background-size: contain;
+    width: 4rem;
+    height: 4rem;
+}
+
+.ex-gateway > b {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+}
+
+.start-event{
+    width: 4rem;
+    height: 4rem;
+    border: 0.1em solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+textarea{
+    width: 90%;
+    height: 90%;
+    outline: none;
+}
+
+.start-event > b{
+    position: absolute;
+    top: 100%;
+}
