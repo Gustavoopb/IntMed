@@ -6,7 +6,7 @@ class Board {
 
     get element() {
         let element = document.querySelector('#root');
-        element.childNodes.forEach(node => element.removeChild(node))
+        root.innerHTML = ''
         element.appendChild(this.protocol.element)
     }
 
@@ -25,8 +25,19 @@ class Board {
     }
 
     static showJSON() {
-        let json = document.querySelector('#root');
-        json.innerHTML = `<pre>${JSON.stringify(Board.instance().toJSON(), null, 3)}</pre>`
+        let root = document.querySelector('#root');
+        root.innerHTML = ''
+        let json = JSON.stringify(Board.instance().toJSON(), null, 3);
+        let blob = new Blob([json], { type: "application/json" });
+        let url = URL.createObjectURL(blob);
+        let a = document.createElement('a')
+        a.download = "intmed-bpmn.json";
+        a.href = url;
+        a.textContent = "Baixar BPMN";
+        root.appendChild(a)
+        let pre = document.createElement('pre')
+        pre.textContent = json;
+        root.appendChild(pre)
     }
 
     static showElement() {
